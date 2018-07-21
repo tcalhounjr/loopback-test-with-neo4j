@@ -1,0 +1,33 @@
+{
+  "name": "location",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "test": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "default": "Los Angeles"
+    },
+    "state": {
+      "type": "string",
+      "required": true,
+      "default": "CA"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,10 @@
+{
+  "db": {
+    "port": 7474,
+    "username": "neo4j",
+    "password": "tomp8667",
+    "name": "db",
+    "connector": "neo4j-graph",
+    "hostname": "localhost"
+  }
+}
