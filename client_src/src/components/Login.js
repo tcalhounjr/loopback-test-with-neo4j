@@ -4,12 +4,12 @@ import axios from 'axios';
 
 class Login extends Component {
 
-    addContact(newContact) {
-        console.log(newContact);
+    addContact(user) {
+        console.log(user);
         axios.request({
             method: 'post',
-            url: 'http://localhost:3000/api/people',
-            data: newContact
+            url: 'http://localhost:3000/api/Users/login',
+            data: user
         }).then(
             response => {
                 this.props.history.push('/');
@@ -19,11 +19,11 @@ class Login extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        const newContact = {
+        const user = {
             email: this.refs.email.value,
             password: this.refs.password.value
         }
-        this.addContact(newContact);
+        this.addContact(user);
         console.log(this.refs.name.value);
     }
 
@@ -43,7 +43,7 @@ class Login extends Component {
                         <label htmlFor="password">Password</label>
                     </div>
                     <input type="submit" value="Login" className="btn" />
-                    <Link className="btn blue right" to="/people/create">Create Account</Link>
+                    <Link className="btn blue right" to="/user/create">Create Account</Link>
                 </form>
             </div>
         )

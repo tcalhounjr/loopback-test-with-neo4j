@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class EditBank extends Component {
+class EditUser extends Component {
 
     constructor(props) {
         super(props);
@@ -16,11 +16,11 @@ class EditBank extends Component {
     }
 
     componentWillMount() {
-        this.getBank();
+        this.getUser();
         console.log('component will mount');
     }
 
-    getBank() {
+    getUser() {
         let entryID = this.state.id;
         console.log('if you love me wont you say somethin ' + entryID);
         axios.get(`http://localhost:3000/api/banks/${entryID}`)
@@ -38,17 +38,17 @@ class EditBank extends Component {
             .catch(err => console.log(err));
     }
 
-    updateContact(updatedContact) {
+    updateUser(updatedContact) {
         let contactName = this.state.name;
         console.log('my name is ' + contactName);
         console.log(updatedContact);
         axios.request({
             method: 'patch',
-            url: `http://localhost:3000/api/people/${this.state.id}`,
+            url: `http://localhost:3000/api/banks/${this.state.id}`,
             data: updatedContact
         }).then(
             response => {
-                this.props.history.push(`/people/${this.state.id}`);
+                this.props.history.push(`/banks/${this.state.id}`);
             }
         ).catch(err => console.log(err));
     }
@@ -61,7 +61,7 @@ class EditBank extends Component {
             email: this.refs.email.value,
             // password: this.refs.password.value
         }
-        this.updateContact(updatedContact);
+        this.updateUser(updatedContact);
     }
 
     handleInputChange(e) {
@@ -84,9 +84,9 @@ class EditBank extends Component {
                     <div className="input-field">
                         <input type="text" name="name" ref="name" value={this.state.name} onChange={this.handleInputChange.bind(this)} />
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field">
                         <input type="text" name="born" ref="born" value={this.state.born} onChange={this.handleInputChange.bind(this)} />
-                    </div>
+                    </div> */}
                     <div className="input-field">
                         <input type="text" name="email" ref="email" value={this.state.email} onChange={this.handleInputChange.bind(this)} />
                         <label htmlFor="email">Email</label>
@@ -102,4 +102,4 @@ class EditBank extends Component {
     }
 }
 
-export default EditBank;
+export default EditUser;

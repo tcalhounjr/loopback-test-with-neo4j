@@ -3,10 +3,12 @@ import {Switch, Route} from 'react-router-dom';
 import Login from './Login';
 import Banks from './Banks';
 import About from './About';
-import EntryDetails from './EntryDetails';
+import BankDetails from './BankDetails';
 import CreateUser from './CreateUser';
-import EditContact from './EditContact';
+import EditUser from './EditUser';
 import CreateBank from './CreateBank';
+import EditBank from './EditBank';
+import UserProfile from './UserProfile';
 
 
 const Main = () => (
@@ -15,10 +17,12 @@ const Main = () => (
         <Route exact path='/' component={Login} />
         <Route exact path='/banks' component={Banks} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/people/create' component={CreateUser} />
+        <Route exact path='/user/create' component={CreateUser} />
         <Route exact path='/bank/add' component={CreateBank} />
-        <Route exact path='/people/:id' component={EntryDetails} />
-        <Route exact path='/people/edit/:id' component={EditContact} />
+        <Route exact path='/user/profile/:id' component={UserProfile} />
+        <Route exact path='/bank/:id' component={BankDetails} />
+        <Route exact path='/user/edit/:id' component={EditUser} />
+        <Route exact path='/bank/edit/:id' component={EditBank} />
     </Switch>
   </main>
 )

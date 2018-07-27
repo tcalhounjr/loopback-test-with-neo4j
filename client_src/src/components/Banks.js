@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import BookEntry from './BookEntry';
+import BookEntry from './BankEntry';
 
 class Banks extends Component {
     constructor (){
         super();
         this.state = {
-            contacts: []
+            banks: []
         }
     }
 
@@ -19,7 +19,7 @@ class Banks extends Component {
         axios.get('http://localhost:3000/api/Banks')
         .then(
             response => {
-                this.setState({contacts: response.data}, () => {
+                this.setState({banks: response.data}, () => {
                     console.log(this.state);
                 })
             }
@@ -28,16 +28,16 @@ class Banks extends Component {
     }
 
     render(){
-        const blackBookEntries = this.state.contacts.map((contact, i) => {
+        const blackBankEntries = this.state.banks.map((bank, i) => {
             return(
-                <BookEntry key={contact.id} entry={contact} />
+                <BookEntry key={bank.id} entry={bank} />
             )
         })
         return (
             <div>
                 <h1>Banks</h1>
                 <ul className="collection">
-                    {blackBookEntries}
+                    {blackBankEntries}
                 </ul>
                 <Link className="btn right" to="/bank/add">Add Bank</Link>
             </div>

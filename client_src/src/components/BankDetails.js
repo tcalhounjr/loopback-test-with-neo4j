@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class EntryDetails extends Component {
+class BankDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,10 +11,10 @@ class EntryDetails extends Component {
     }
 
     componentWillMount() {
-        this.getContact();
+        this.getBank();
     }
 
-    getContact() {
+    getBank() {
         let entryID = this.props.match.params.id;
         axios.get(`http://localhost:3000/api/Banks/${entryID}`)
         .then(
@@ -28,8 +28,8 @@ class EntryDetails extends Component {
     }
 
     onDelete() {
-        let contactID = this.state.details.id;
-        axios.delete(`http://localhost:3000/api/people/${contactID}`)
+        let bankID = this.state.details.id;
+        axios.delete(`http://localhost:3000/api/banks/${bankID}`)
         .then(response => {
             this.props.history.push('/banks');
         }).catch(err => console.log(err));
@@ -52,4 +52,4 @@ class EntryDetails extends Component {
     }
 }
 
-export default EntryDetails;
+export default BankDetails;
