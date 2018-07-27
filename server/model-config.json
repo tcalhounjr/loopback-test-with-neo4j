@@ -46,5 +46,13 @@
   "db": {
     "dataSource": "db",
     "public": true
+  },
+  "Bank": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Branch": {
+    "dataSource": "db",
+    "public": true
   }
 }

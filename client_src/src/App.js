@@ -12,7 +12,7 @@ const App = () => (
       <Main />
     </div>
     <div className="fixed-action-btn">
-      <Link to="/people/add" className="btn-floating btn-large red"><i className="fa fa-plus"></i></Link>
+      <Link to="/banks/add" className="btn-floating btn-large red"><i className="fa fa-plus"></i></Link>
     </div>
   </div>
 )
