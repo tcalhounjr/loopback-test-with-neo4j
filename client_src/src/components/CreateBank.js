@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class CreateBank extends Component {
 
-    addUser(newContact) {
+    addBank(newContact) {
         console.log(newContact);
         axios.request({
             method: 'POST',
@@ -24,7 +24,7 @@ class CreateBank extends Component {
             headquarters: this.refs.headquarters.value,
             url: this.refs.url.value,
         }
-        this.addUser(newContact);
+        this.addBank(newContact);
     }
 
     render() {

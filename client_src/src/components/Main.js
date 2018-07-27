@@ -9,6 +9,7 @@ import EditUser from './EditUser';
 import CreateBank from './CreateBank';
 import EditBank from './EditBank';
 import UserProfile from './UserProfile';
+import CreateBranch from './CreateBranch';
 
 
 const Main = () => (
@@ -19,6 +20,7 @@ const Main = () => (
         <Route exact path='/about' component={About} />
         <Route exact path='/user/create' component={CreateUser} />
         <Route exact path='/bank/add' component={CreateBank} />
+        <Route exact path='/branch/add/:id' component={CreateBranch} />
         <Route exact path='/user/profile/:id' component={UserProfile} />
         <Route exact path='/bank/:id' component={BankDetails} />
         <Route exact path='/user/edit/:id' component={EditUser} />

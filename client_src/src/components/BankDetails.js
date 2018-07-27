@@ -15,8 +15,8 @@ class BankDetails extends Component {
     }
 
     getBank() {
-        let entryID = this.props.match.params.id;
-        axios.get(`http://localhost:3000/api/Banks/${entryID}`)
+        let bankID = this.props.match.params.id;
+        axios.get(`http://localhost:3000/api/Banks/${bankID}`)
         .then(
             response => {
                 this.setState({details: response.data}, () => {
@@ -45,7 +45,7 @@ class BankDetails extends Component {
                     <li className="collection-item">Headquarters: {this.state.details.headquarters}</li>
                     <li className="collection-item">Website: {this.state.details.url}</li>
                 </ul>
-                <Link className="btn" to={`/people/edit/${this.state.details.id}`}>Edit</Link>
+                <Link className="btn" to={`/bank/edit/${this.state.details.id}`}>Edit</Link>
                 <button className="btn red right" onClick={this.onDelete.bind(this)}>Delete</button>
             </div>
         )

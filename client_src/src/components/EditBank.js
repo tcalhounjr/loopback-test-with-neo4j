@@ -8,10 +8,8 @@ class EditBank extends Component {
         super(props);
         this.state = {
             id: this.props.match.params.id,
-            born: '',
-            name: '',
-            email: '',
-            password: ''
+            headquarters: '',
+            url: ''
         }
     }
 
@@ -27,10 +25,8 @@ class EditBank extends Component {
         .then(
             response => {
                 this.setState({
-                    born: response.data.born,
-                    name: response.data.name,
-                    email: response.data.email,
-                    password: response.data.password
+                    headquarters: response.data.headquarters,
+                    url: response.data.url
                 }, () => {
                     console.log(this.state);
                 });
@@ -56,9 +52,9 @@ class EditBank extends Component {
     onSubmit(e) {
         e.preventDefault();
         const updatedContact = {
-            name: this.refs.name.value,
-            born: this.refs.born.value,
-            email: this.refs.email.value,
+            headquarters: this.refs.headquarters.value,
+            url: this.refs.url.value
+            // email: this.refs.email.value,
             // password: this.refs.password.value
         }
         this.updateUser(updatedContact);
@@ -78,24 +74,31 @@ class EditBank extends Component {
         return (
             <div>
                 <br />
-                <Link className="btn grey" to="/contacts">Back</Link>
-                <h1>Edit Contact</h1>
+                <Link className="btn grey" to="/banks">Back</Link>
+                <h1>Edit Bank</h1>
                 <form onSubmit={this.onSubmit.bind(this)} >
                     <div className="input-field">
-                        <input type="text" name="name" ref="name" value={this.state.name} onChange={this.handleInputChange.bind(this)} />
+                        <input type="text" name="headquarters" ref="headquarters" value={this.state.headquarters} onChange={this.handleInputChange.bind(this)} />
+                        <label htmlFor="email">Headquarters: </label>
                     </div>
                     {/* <div className="input-field">
                         <input type="text" name="born" ref="born" value={this.state.born} onChange={this.handleInputChange.bind(this)} />
                     </div> */}
                     <div className="input-field">
+                        <input type="url" name="url" ref="url" placeholder="http://example.com" 
+                        pattern="http://.*" size="20" value={this.state.url} onChange={this.handleInputChange.bind(this)} required />
+                        <label htmlFor="url">Bank Website (http://)</label>
+                    </div>
+                    {/* <div className="input-field">
                         <input type="text" name="email" ref="email" value={this.state.email} onChange={this.handleInputChange.bind(this)} />
                         <label htmlFor="email">Email</label>
-                    </div>
+                    </div> */}
                      {/* <div className="input-field">
                         <input type="password" name="password" ref="password" />
                         <label htmlFor="password">Password</label>
                     </div> */}
-                    <input type="submit" value="Edit Bank" className="btn" />
+                    <input type="submit" value="Edit Bank" className="btn yellow darken-3" />
+                    <Link className="btn right" to={`/branch/add/${this.state.id}`}>Add Branch</Link>
                 </form>
             </div>
         )

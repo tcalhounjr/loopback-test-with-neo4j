@@ -17,6 +17,10 @@
     "zip": {
       "type": "string",
       "required": true
+    },
+    "bankID": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
