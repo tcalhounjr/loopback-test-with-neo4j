@@ -20,7 +20,7 @@
     },
     "bankID": {
       "type": "string",
-      "required": false
+      "required": true
     }
   },
   "validations": [],

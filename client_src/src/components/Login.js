@@ -12,7 +12,7 @@ class Login extends Component {
             data: user
         }).then(
             response => {
-                this.props.history.push('/');
+                this.props.history.push(`/banks`);
             }
         ).catch(err => console.log(err));
     }
@@ -24,7 +24,7 @@ class Login extends Component {
             password: this.refs.password.value
         }
         this.addContact(user);
-        console.log(this.refs.name.value);
+        //console.log(this.refs.name.value);
     }
 
     render() {
@@ -35,11 +35,11 @@ class Login extends Component {
                 <h1>Login</h1>
                 <form onSubmit={this.onSubmit.bind(this)} >
                     <div className="input-field">
-                        <input type="text" name="email" ref="name" />
+                        <input type="text" name="email" ref="email" />
                         <label htmlFor="email">Email</label>
                     </div>
                     <div className="input-field">
-                        <input type="password" name="password" ref="born" />
+                        <input type="password" name="password" ref="password" />
                         <label htmlFor="password">Password</label>
                     </div>
                     <input type="submit" value="Login" className="btn" />

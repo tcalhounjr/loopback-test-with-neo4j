@@ -34,30 +34,30 @@ class EditBank extends Component {
             .catch(err => console.log(err));
     }
 
-    updateUser(updatedContact) {
+    updateUser(updatedBank) {
         let contactName = this.state.name;
         console.log('my name is ' + contactName);
-        console.log(updatedContact);
+        console.log(updatedBank);
         axios.request({
             method: 'patch',
             url: `http://localhost:3000/api/banks/${this.state.id}`,
-            data: updatedContact
+            data: updatedBank
         }).then(
             response => {
-                this.props.history.push(`/banks/${this.state.id}`);
+                this.props.history.push(`/bank/${this.state.id}`);
             }
         ).catch(err => console.log(err));
     }
 
     onSubmit(e) {
         e.preventDefault();
-        const updatedContact = {
+        const updatedBank = {
             headquarters: this.refs.headquarters.value,
             url: this.refs.url.value
             // email: this.refs.email.value,
             // password: this.refs.password.value
         }
-        this.updateUser(updatedContact);
+        this.updateUser(updatedBank);
     }
 
     handleInputChange(e) {
@@ -79,7 +79,7 @@ class EditBank extends Component {
                 <form onSubmit={this.onSubmit.bind(this)} >
                     <div className="input-field">
                         <input type="text" name="headquarters" ref="headquarters" value={this.state.headquarters} onChange={this.handleInputChange.bind(this)} />
-                        <label htmlFor="email">Headquarters: </label>
+                        <label htmlFor="email"> </label>
                     </div>
                     {/* <div className="input-field">
                         <input type="text" name="born" ref="born" value={this.state.born} onChange={this.handleInputChange.bind(this)} />
@@ -87,7 +87,7 @@ class EditBank extends Component {
                     <div className="input-field">
                         <input type="url" name="url" ref="url" placeholder="http://example.com" 
                         pattern="http://.*" size="20" value={this.state.url} onChange={this.handleInputChange.bind(this)} required />
-                        <label htmlFor="url">Bank Website (http://)</label>
+                        <label htmlFor="url"></label>
                     </div>
                     {/* <div className="input-field">
                         <input type="text" name="email" ref="email" value={this.state.email} onChange={this.handleInputChange.bind(this)} />

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import BookEntry from './BankEntry';
+import BankEntry from './BankEntry';
 
 class Banks extends Component {
     constructor (){
@@ -30,7 +30,7 @@ class Banks extends Component {
     render(){
         const blackBankEntries = this.state.banks.map((bank, i) => {
             return(
-                <BookEntry key={bank.id} entry={bank} />
+                <BankEntry key={bank.id} entry={bank} />
             )
         })
         return (
