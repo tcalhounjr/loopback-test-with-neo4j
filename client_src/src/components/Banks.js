@@ -12,11 +12,11 @@ class Banks extends Component {
     }
 
     componentWillMount(){
-        this.getContacts();
+        this.getBanks();
     }
 
-    getContacts() {
-        axios.get('http://localhost:3000/api/Banks')
+    getBanks() {
+        axios.get('https://hobby-kibaaikfepomgbkedeklinbl.dbs.graphenedb.com/api/Banks')
         .then(
             response => {
                 this.setState({banks: response.data}, () => {
