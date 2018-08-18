@@ -1,10 +1,10 @@
 {
   "db": {
-    "port": 7474,
-    "username": "neo4j",
-    "password": "tomp8667",
+    "port": "24780",
+    "username": "app105774225-aDDH0K",
+    "password": "b.ePHTgInWD8xJ.uCnqJus4PmLu3cxh",
     "name": "db",
     "connector": "neo4j-graph",
-    "hostname": "localhost"
+    "hostname": "hobby-kibaaikfepomgbkedeklinbl.dbs.graphenedb.com"
   }
 }
