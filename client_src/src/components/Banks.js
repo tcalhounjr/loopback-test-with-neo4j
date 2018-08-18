@@ -16,7 +16,7 @@ class Banks extends Component {
     }
 
     getBanks() {
-        axios.get('https://hobby-kibaaikfepomgbkedeklinbl.dbs.graphenedb.com/api/Banks')
+        axios.get('https://salty-plains-43075.herokuapp.com/api/Banks')
         .then(
             response => {
                 this.setState({banks: response.data}, () => {
