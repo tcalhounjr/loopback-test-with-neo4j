@@ -12,7 +12,7 @@ class CreateBank extends Component {
             data: newContact
         }).then(
             response => {
-                this.props.history.push('/banks');
+                this.props.history.push('https://salty-plains-43075.herokuapp.com/banks');
             }
         ).catch(err => console.log(err));
     }
