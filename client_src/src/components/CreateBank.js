@@ -8,11 +8,11 @@ class CreateBank extends Component {
         console.log(newContact);
         axios.request({
             method: 'POST',
-            url: 'https://benki-loopback.herokuapp.com/api/Banks',
+            url: 'https://salty-plains-43075.herokuapp.com/api/Banks',
             data: newContact
         }).then(
             response => {
-                this.props.history.push('https://salty-plains-43075.herokuapp.com/banks');
+                this.props.history.push('/banks');
             }
         ).catch(err => console.log(err));
     }
