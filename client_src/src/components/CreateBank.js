@@ -8,7 +8,7 @@ class CreateBank extends Component {
         console.log(newContact);
         axios.request({
             method: 'POST',
-            url: 'http://localhost:3000/api/Banks',
+            url: 'https://benki-loopback.herokuapp.com/api/Banks',
             data: newContact
         }).then(
             response => {
