@@ -16,7 +16,7 @@ class BankDetails extends Component {
 
     getBank() {
         let bankID = this.props.match.params.id;
-        axios.get(`http://localhost:3000/api/Banks/${bankID}`)
+        axios.get(`https://salty-plains-43075.herokuapp.com/api/Banks/${bankID}`)
         .then(
             response => {
                 this.setState({details: response.data}, () => {
